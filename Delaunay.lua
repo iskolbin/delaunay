@@ -27,11 +27,12 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 --]]
 
--- Coded by Ilya Kolbin (iskolbin@gmail.com)
+-- Coded by Ilya Kolbin (iskolbin@gmail.com).
 --
 -- Deviations from original library:
--- 1. Triangulation function takes array instead of tuple
--- 2. Use LuaJIT FFI if possible( turnable off )
+--
+-- 1. Triangulation function takes array instead of tuple;
+-- 2. Use LuaJIT FFI if possible( turnable off ).
 -- 
 -- Using FFI increases performance roughly x2.
 --
@@ -337,7 +338,7 @@ if isffi then
 	typedef struct { %s x, y; uint32_t id; } Point;
 	typedef struct { Point p1, p2; } Edge;
 	typedef struct { Point p1, p2, p3; Edge e1, e2, e3; } Triangle;
-	]]):format( _G.DELAUNAY_FFI_FLOAT_TYPE or 'double' ))
+	]]):format( _G.DELAUNAY_FFI_TYPE or 'double' ))
 
 	ffiPoint = ffi.metatype( "Point", Point )
 	ffiEdge = ffi.metatype( "Edge", Edge )

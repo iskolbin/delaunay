@@ -1,12 +1,14 @@
-# delaunay
-Delaunay triangulation in Lua
+delaunay
+========
+
+Delaunay triangulation in Lua.
 
 Based on [Delaunay triangulation library by Yonaba](https://github.com/Yonaba/delaunay) (roland.yonaba@gmail.com).
 
 Deviations from original library:
 
-1. Triangulation function takes array instead of tuple
-2. Use LuaJIT FFI if possible( turnable off )
+1. Triangulation function takes array instead of tuple;
+2. Use LuaJIT FFI if possible( turnable off ).
 
 Using FFI increases performance roughly x2.
 
