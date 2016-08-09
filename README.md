@@ -18,4 +18,4 @@ decrese memory use by setting:
 _G.DELAUNAY_FFI_TYPE = 'float'
 ```
 in this case memory usage drops on 60-70%. Note that you must set 
-it **before the library is loaded is loaded and shouldn't change it later**.
+it **before the library is loaded and shouldn't change it later**.
