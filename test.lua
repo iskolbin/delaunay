@@ -1,5 +1,5 @@
-local Delaunay = require ('Delaunay')
-local Point    = Delaunay.Point
+local delaunay = require ('delaunay')
+local Point    = delaunay.Point
 
 math.randomseed(os.time())
 
@@ -32,7 +32,7 @@ end
 local function main()
   for i = 1, N_TESTS do
 		local p = genPoints(MAX_POINTS)
-    local duration, mem = time(Delaunay.triangulate, p)
+    local duration, mem = time(delaunay.triangulate, p)
     print(('Test %02d: triangulating %04d points in %.2f ms, memory usage: %f Kb'):format(i, MAX_POINTS, duration, mem))
   end
 end

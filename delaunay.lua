@@ -240,7 +240,7 @@ end} )
 
 
 
-local Delaunay = {
+local delaunay = {
   Point            = Point,
   Edge             = Edge,
   Triangle         = Triangle,
@@ -248,7 +248,7 @@ local Delaunay = {
 }
 
 --- Triangulates a set of given vertices
-function Delaunay.triangulate( vertices )
+function delaunay.triangulate( vertices )
   local nvertices = #vertices
 
   assert( nvertices > 2, "Cannot triangulate, needs more than 3 vertices" )
@@ -270,7 +270,7 @@ function Delaunay.triangulate( vertices )
     if vertex.y > maxY then maxY = vertex.y end
   end
 
-	local convex_mult = Delaunay.convexMultiplier
+	local convex_mult = delaunay.convexMultiplier
   local dx, dy = (maxX - minX) * convex_mult, (maxY - minY) * convex_mult
   local deltaMax = max(dx, dy)
   local midx, midy = (minX + maxX) * 0.5, (minY + maxY) * 0.5
@@ -327,7 +327,7 @@ function Delaunay.triangulate( vertices )
   return triangles
 end
 
-function Delaunay.setffi( set )
+function delaunay.setffi( set )
 	if ffi then
 		isffi = set
 	end
@@ -345,4 +345,4 @@ if isffi then
 	ffiTriangle = ffi.metatype( "Triangle", Triangle )
 end
 
-return Delaunay
+return delaunay
